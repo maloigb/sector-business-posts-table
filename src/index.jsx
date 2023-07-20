@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-// eslint-disable-next-line import/no-unresolved
 import { Provider } from 'react-redux';
 import App from './App';
 import store from './store/index';
