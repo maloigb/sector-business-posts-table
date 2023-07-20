@@ -5,12 +5,8 @@ import { getPosts } from './store/slices/postSlice';
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPosts);
+    dispatch(getPosts());
   }, []);
-
-  return (
-    <div>Привет</div>
-  );
 }
 
 export default App;
