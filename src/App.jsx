@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getPosts } from './store/slices/postSlice';
-import Tables from './components/Table/Table';
+import Table from './components/Table/PostTable';
 
 function App() {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ function App() {
     dispatch(getPosts());
   }, []);
 
-  return <Tables />;
+  return <Table />;
 }
 
 export default App;

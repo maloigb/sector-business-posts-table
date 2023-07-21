@@ -6,7 +6,7 @@ export default (data) => {
     directionSort: true,
   });
   const changeSort = (field) => {
-    if (field === sortConfig.fielddSort) {
+    if (field === sortConfig.fieldSort) {
       setSortConfig({ ...sortConfig, directionSort: !sortConfig.directionSort });
     } else {
       setSortConfig({ ...sortConfig, fieldSort: field, directionSort: true });
@@ -17,9 +17,9 @@ export default (data) => {
     const sortedData = [...data];
     sortedData.sort((a, b) => {
       if (sortConfig.directionSort) {
-        return a[field].localeCompare(b[field]);
+        return String(a[field]).localeCompare(String(b[field]));
       }
-      return b[field].localeCompare(a[field]);
+      return String(b[field]).localeCompare(String(a[field]));
     });
     return sortedData;
   };
