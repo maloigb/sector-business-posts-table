@@ -1,0 +1,7 @@
+.search {
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    width: 631px;
+    height: 52px;
+}

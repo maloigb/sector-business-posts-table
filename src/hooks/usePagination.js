@@ -1,14 +1,14 @@
 import { useState, useMemo } from 'react';
 
-export default (data, currentPage, pageSize) => {
-  const [page] = useState(currentPage);
-  const copyPosts = [...data];
+export default (data, startPage, pageSize) => {
+  const [page, setPage] = useState(startPage);
   const paginatedData = useMemo(
-    () => copyPosts.slice((page * pageSize - pageSize), (page * pageSize - 1)),
-    [data],
+    () => data.slice((page * pageSize - pageSize), (page * pageSize)),
+    [page, data],
   );
-
   return {
     paginatedData,
+    page,
+    setPage,
   };
 };

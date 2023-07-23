@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default (data) => {
+export default () => {
   const [sortConfig, setSortConfig] = useState({
     fieldSort: '',
     directionSort: true,
@@ -12,7 +12,7 @@ export default (data) => {
       setSortConfig({ ...sortConfig, fieldSort: field, directionSort: true });
     }
   };
-  const sort = (field) => {
+  const sort = (field, data) => {
     changeSort(field);
     const sortedData = [...data];
     sortedData.sort((a, b) => {
