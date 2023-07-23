@@ -10,7 +10,11 @@ function App() {
     dispatch(getPosts());
   }, []);
 
-  return <Table />;
+  return (
+    <div className="container">
+      <Table />
+    </div>
+  );
 }
 
 export default App;
