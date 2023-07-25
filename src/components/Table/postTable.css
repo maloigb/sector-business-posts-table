@@ -1,7 +1,113 @@
 .search {
-    background-color: aqua;
+    background-color: rgba(90, 92, 102, 1);
     display: flex;
     flex-direction: row;
-    width: 631px;
+    width: 100%;
     height: 52px;
+    
+}
+
+.search-button {
+    background-color: rgba(90, 92, 102, 1);
+    height: 100%;
+    width: 10%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+}
+
+
+.search input {
+    height: 100%;
+    width: 80%;
+    background-color: rgba(90, 92, 102, 1);
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    background: transparent;
+    margin-left: 20px;
+    color: rgba(178, 183, 191, 1);
+}
+
+.search-input:focus {
+    border: unset;
+    color: rgba(178, 183, 191, 1);
+    outline: none;
+}
+
+.container-table {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+.container-table table {
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+
+}
+
+.table-head {
+    background-color: rgba(71, 73, 85, 1);
+    width: 100%;
+    height: 54px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    flex-direction: row;
+}
+
+.table-head__column {
+    border: unset;
+}
+.table-head__column:nth-child(1) {
+    width: 10.3%;
+}
+.table-head__column:nth-child(2) {
+    width: 49.4%;
+}
+.table-head__column:nth-child(3) {
+    width: 40.3%;
+}
+.table-head__content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 39px;
+}
+.pagination {
+    margin-top: 24px;
+    width: 100%;
+}
+.container-pagination {
+    width: 100%;
+}
+
+.table-body__row {
+    color: rgba(71, 73, 85, 1);
+    text-align: center;
+}
+.table-body__column {
+    border: solid 1px rgba(227, 230, 236, 1);
+    text-align: left;
+    padding: 10px 8px;
+}
+.table-body__column:nth-child(1) {
+    text-align: center;
+}
+.page {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 1200px) {
+    .search {
+        width: 631px;
+    }
 }

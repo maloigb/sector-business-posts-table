@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getPosts } from './store/slices/postSlice';
 import Table from './components/Table/PostTable';
+import './App.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="table-container">
       <Table />
     </div>
   );
