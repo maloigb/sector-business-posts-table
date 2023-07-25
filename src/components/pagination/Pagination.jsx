@@ -20,7 +20,7 @@ function Pagination({
   return (
     <div className="container-pagination">
       <div className="switch">
-        {hasPrevPage && <Link to={`?page=${currentPage - 1}`}>Назад</Link>}
+        {hasPrevPage && <Link onClick={() => setActivePage(activePage - 1)} to={`?page=${currentPage - 1}`}>Назад</Link>}
       </div>
       <div className="pagination-pages">
         <ul>
@@ -34,7 +34,7 @@ function Pagination({
         </ul>
       </div>
       <div className="switch">
-        {hasNextPage && <Link to={`?page=${currentPage + 1}`}>Далее</Link>}
+        {hasNextPage && <Link onClick={() => setActivePage(activePage + 1)} to={`?page=${currentPage + 1}`}>Далее</Link>}
       </div>
     </div>
   );
