@@ -1,0 +1,48 @@
+.container-pagination {
+    display: flex;
+    flex-direction:row;
+    justify-content:space-around;
+}
+
+.pagination-pages ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.switch a {
+    text-decoration: none;
+    color: rgba(71, 73, 85, 1);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 33.04px;
+}
+
+.pagination-pages a {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.pagination-pages li {
+    list-style-type: none;
+}
+
+.pages-link {
+    margin-left: 10px;
+    color: rgba(71, 73, 85, 1);
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 24.78px;
+}
+.pages-link-active {
+    margin-left: 10px;
+    color: rgba(126, 188, 60, 1);
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 24.78px;
+}
+
+.active {
+
+}

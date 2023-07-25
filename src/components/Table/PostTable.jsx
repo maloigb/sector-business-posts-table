@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
@@ -6,6 +8,8 @@ import { useSelector } from 'react-redux';
 import { useTable } from '../../hooks/useTable';
 import Pagination from '../pagination/Pagination';
 import './postTable.css';
+import Logo from './icons/Vector.svg';
+import Arrow from './icons/Group.svg';
 
 const PAGE_SIZE = 10;
 
@@ -27,34 +31,69 @@ function PostTable() {
   } = useTable(startPage, PAGE_SIZE, posts);
 
   return (
-    <div>
+    <div className="page">
       <div className="search">
-        <input className="search-input" value={searchString} onChange={(e) => setSearchString(e.target.value)} type="text" />
-        <button className="search-button" onClick={filter} type="button">Search</button>
+        <input placeholder="Поиск" className="search-input" value={searchString} onChange={(e) => setSearchString(e.target.value)} type="text" />
+        <button className="search-button" onClick={filter} type="button">
+          <img src={Logo} />
+        </button>
       </div>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th onClick={() => sort('id')}>ID</th>
-            <th onClick={() => sort('title')}>Заголовок</th>
-            <th onClick={() => sort('body')}>Описание</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sortedData?.map((post) => (
-            <tr key={post.id}>
-              <th>{post.id}</th>
-              <th>{post.title}</th>
-              <th>{post.body}</th>
+      <div className="container-table">
+        <Table bsPrefix="test" striped bordered hover>
+          <thead className="table-head">
+            <tr className="table-head__row">
+              <th
+                className="table-head__column"
+                onClick={() => sort('id')}
+              >
+                <div className="table-head__content-container">
+                  <span>ID</span>
+                  <img src={Arrow} />
+                </div>
+              </th>
+              <th
+                className="table-head__column"
+                onClick={() => sort('title')}
+              >
+                <div className="table-head__content-container">
+                  <span>
+                    Заголовок
+                  </span>
+                  <img src={Arrow} />
+                </div>
+              </th>
+              <th
+                className="table-head__column"
+                onClick={() => sort('body')}
+              >
+                <div className="table-head__content-container">
+                  <span>Описание</span>
+                  <img src={Arrow} />
+                </div>
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
-      <Pagination
-        postsPerPage={PAGE_SIZE}
-        currentPage={page}
-        totalRows={totalRows}
-      />
+          </thead>
+          <tbody className="table-body">
+            {sortedData?.map((post) => (
+              <tr
+                key={post.id}
+                className="table-body__row"
+              >
+                <td className="table-body__column">{post.id}</td>
+                <td className="table-body__column">{post.title}</td>
+                <td className="table-body__column">{post.body}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
+      <div className="pagination">
+        <Pagination
+          postsPerPage={PAGE_SIZE}
+          currentPage={page}
+          totalRows={totalRows}
+        />
+      </div>
     </div>
   );
 }
